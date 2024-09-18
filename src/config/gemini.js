@@ -1,13 +1,13 @@
 
 // node --version # Should be >= 18
 // npm install @google/generative-ai
-
+import dotenv from 'dotenv';
 import {
     GoogleGenerativeAI,
     HarmCategory,
     HarmBlockThreshold,
 } from "@google/generative-ai";
-
+dotenv.config();
 const MODEL_NAME = "gemini-1.5-flash";
 
 
