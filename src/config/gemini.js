@@ -1,18 +1,17 @@
 
 // node --version # Should be >= 18
 // npm install @google/generative-ai
-import dotenv from 'dotenv';
+
 import {
     GoogleGenerativeAI,
     HarmCategory,
     HarmBlockThreshold,
 } from "@google/generative-ai";
-dotenv.config();
+
 const MODEL_NAME = "gemini-1.5-flash";
-
-
+const apikey = import.meta.env.VITE_API_KEY
 async function runChat(prompt) {
-    const genAI = new GoogleGenerativeAI(process.env.API_KEY);
+    const genAI = new GoogleGenerativeAI(apikey);
     const model = genAI.getGenerativeModel({ model: MODEL_NAME });
 
     const generationConfig = {
